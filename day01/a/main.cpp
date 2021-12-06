@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 
+#define FN "input.txt"
+
 int main(int argc, char** argv){
 	if(argc > 1){
 		std::ifstream ifs(argv[1]);
@@ -20,9 +22,11 @@ int main(int argc, char** argv){
 				depth_old = depth;
 			}
 		}
-		std::cout << "All decreased: " << n << '\n';
+		std::cout << "\nResult: " << n << '\n';
+	}else{
+		std::cerr << "Missing \'" << FN << "\' file.\n";
+		return 1;
 	}
-
 	
 	return 0;
 }
